@@ -5,6 +5,9 @@ import unittest
 
 
 class TestDummy(unittest.TestCase):
+    """
+        Dummy class to trigger "Run test in folder" menu in PyCharm
+    """
     pass
 
 
