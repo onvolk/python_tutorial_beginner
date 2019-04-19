@@ -20,6 +20,17 @@ class TestLists(unittest.TestCase):
         result = [item.upper() for item in 'Would you like a cup of coffee?'.split() if len(item) > 3]
         self.assertListEqual(result, ['WOULD', 'LIKE', 'COFFEE?'])
 
+    def test_comprehension_strings(self):
+        names = ['John', 'Mike', 'Tony', 'Leon']
+        result = ['Hello ' + item for item in names]
+        self.assertListEqual(result, ['Hello John', 'Hello Mike', 'Hello Tony', 'Hello Leon'])
+
+    def test_comprehension_numbers(self):
+        range_1_11 = range(1, 11)
+        numbers = list(range_1_11)
+        result = [item for item in numbers if item % 2 == 0]
+        self.assertListEqual(result, [2, 4, 6, 8, 10])
+
 
 if __name__ == '__main__':
     unittest.main()

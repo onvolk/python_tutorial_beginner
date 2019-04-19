@@ -28,6 +28,14 @@ class TestStrings(unittest.TestCase):
         self.assertTrue(drinks.endswith('?'))
         self.assertFalse(drinks.endswith('!'))
 
+    def test_string_format_without_names(self):
+        greeting = 'Hello, {} {}'.format('Olha', 'Volk')
+        self.assertEqual(greeting, 'Hello, Olha Volk')
+
+    def test_string_format_with_names(self):
+        greeting = 'Hello, {first_name} {last_name}'.format(first_name='Olha', last_name='Volk')
+        self.assertEqual(greeting, 'Hello, Olha Volk')
+
 
 if __name__ == '__main__':
     unittest.main()
