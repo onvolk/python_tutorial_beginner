@@ -11,7 +11,7 @@ class TestSets(unittest.TestCase):
         difference = set_a.difference(set_b)
         self.assertSetEqual(difference, {5, 6, 7})
 
-    def test_remove_duplicats(self):
+    def test_remove_duplicates(self):
         nums = [1, 2, 1, 1, 1, 3, 4]
         self.assertListEqual(list(set(nums)), [1, 2, 3, 4])
 
