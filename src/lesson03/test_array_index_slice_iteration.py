@@ -17,14 +17,12 @@ class TestNumpyArrayIndexingSlicingIteration(unittest.TestCase):
         np.testing.assert_array_equal(a[:7], [0, 2, 4, 6, 8, 10, 12])  # elements 0 to 6
         np.testing.assert_array_equal(a[7:], [14, 16, 18])  # start from 0, elements 6 to the end
 
-
     def test_array_iteration(self):
         a = np.arange(10) ** 2
-        np.testing.assert_array_equal(a, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81])
-        result = list()
+        result = np.array([])
         for i in a:
-            result.append(np.sqrt(i))
-        self.assertListEqual(result, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            result = np.append(result, np.sqrt(i))
+        np.testing.assert_array_equal(result, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
     def test_array_multi_indexing(self):
         a = np.arange(20).reshape(4,5)
@@ -32,11 +30,11 @@ class TestNumpyArrayIndexingSlicingIteration(unittest.TestCase):
                                             [5,  6,  7,  8,  9],
                                             [10, 11, 12, 13, 14],
                                             [15, 16, 17, 18, 19]])
-        self.assertEqual(a[2,3], 13)
+        self.assertEqual(a[2, 3], 13)
 
     def test_array_multi_slicing(self):
         a = np.arange(20).reshape(4, 5)
-        np.testing.assert_array_equal(a[1:3,2:4], [[7, 8],
+        np.testing.assert_array_equal(a[1:3, 2:4], [[7, 8],
                                                     [12, 13]])  # 2nd and 3th rows, 3th and 4th columns
 
 
