@@ -23,8 +23,8 @@ class TestLoops(unittest.TestCase):
         my_dict = {'color': 'white', 'shape': 'circle', 'size': 10}
         result = []
         for key, value in my_dict.items():
-            result.append([key, value])
-        self.assertListEqual(result, [['color', 'white'], ['shape', 'circle'], ['size', 10]])
+            result.append((key, value))
+        self.assertListEqual(result, [('color', 'white'), ('shape', 'circle'), ('size', 10)])
 
 
 if __name__ == '__main__':
