@@ -31,6 +31,10 @@ class TestLists(unittest.TestCase):
         result = [item for item in numbers if item % 2 == 0]
         self.assertListEqual(result, [2, 4, 6, 8, 10])
 
+    def test_all_function(self):
+        self.assertTrue(all([True, True, True]))
+        self.assertFalse(all([True, False, True]))
+
 
 if __name__ == '__main__':
     unittest.main()

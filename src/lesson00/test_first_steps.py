@@ -38,6 +38,5 @@ class TestFirstThingsInPythonMethods(unittest.TestCase):
         a = "Olechka"
         self.assertEqual(a.lower(), "olechka")
 
-
 if __name__ == '__main__':
     unittest.main()
