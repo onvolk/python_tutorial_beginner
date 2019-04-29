@@ -12,11 +12,14 @@ class TestPandasSeriesOperations(unittest.TestCase):
         srs = pd.Series(arr)
         self.assertTrue(isinstance(srs[1], float))
         self.assertEqual(srs[1].size, 1)
+
         self.assertListEqual(srs[2:].index.tolist(), [2, 3, 4])
         self.assertEqual(srs[2:].size, 3)
+
         self.assertListEqual(srs[[3, 0, 4]].index.tolist(), [3, 0, 4])
         self.assertEqual(srs[[3, 0, 4]].size, 3)
 
+    # TODO: Fix me!
     def test_series_operations(self):
         arr = np.random.randn(5)
         srs = pd.Series(arr)
