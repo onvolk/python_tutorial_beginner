@@ -19,8 +19,8 @@ class TestPandasColumnRenameRearrange(unittest.TestCase):
 
     def test_column_rearrange(self):
         data = pd.read_csv('{}\\fixtures\customers.csv'.format(self.CURRENT_FOLDER)).head()
-        cols = data.columns.tolist() # makes a list of columns names
-        cols = cols[::-1] # reverse the list
+        cols = data.columns.tolist()  # makes a list of columns names
+        cols = cols[::-1]  # reverse the list
         result = data[cols]
         result.to_csv('{}\\out\\rearrange_columns.csv'.format(self.CURRENT_FOLDER))
         self.assertListEqual(cols, result.columns.tolist())
