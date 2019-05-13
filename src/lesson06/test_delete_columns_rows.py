@@ -23,7 +23,7 @@ class TestPandasDeleteColumnsRows(unittest.TestCase):
     def test_delete_rows_by_condition(self):
         data = pd.read_csv('{}\\fixtures\customers.csv'.format(self.CURRENT_FOLDER))
         data[data.Country != 'Germany'].to_csv('{}\\out\\delete_rows_by_condition.csv'.format(self.CURRENT_FOLDER)) # drop customer from Germany
-        data[data.CustomerID>50].to_csv('{}\\out\\delete_rows_by_condition50.csv'.format(self.CURRENT_FOLDER)) # delete all till 50 row
+        data[data.CustomerID > 50].to_csv('{}\\out\\delete_rows_by_condition50.csv'.format(self.CURRENT_FOLDER)) # delete all till 50 row
 
 
 if __name__ == '__main__':

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import numpy as np
 import os
 import pandas as pd
 
@@ -20,7 +19,6 @@ class TestPandasBackup(unittest.TestCase):
         self.assertEqual(len(data), 0)
         data = backup.copy()
         self.assertEqual(len(data), 5)
-
 
 
 if __name__ == '__main__':

@@ -18,14 +18,13 @@ class TestPandasSelectByColumn(unittest.TestCase):
 
     def test_select_column_by_number(self):
         data = pd.read_csv('{}\\fixtures\customers.csv'.format(self.CURRENT_FOLDER))
-        result = data[[1, 2]]
+        result = data[[data.columns[1], data.columns[4]]]
         result.to_csv('{}\\out\select_by_number.csv'.format(self.CURRENT_FOLDER))
 
     def test_select_column_by_attribute(self):
         data = pd.read_excel('{}\\fixtures\customers.xlsx'.format(self.CURRENT_FOLDER), sheet_name='Sheet1')
         result = data.CustomerName
         result.to_excel('{}\\out\select_by_attribute.xlsx'.format(self.CURRENT_FOLDER))
-
 
 
 if __name__ == '__main__':

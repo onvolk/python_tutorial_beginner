@@ -19,6 +19,7 @@ class TestPandasIndexChangeRestore(unittest.TestCase):
         result = data.reset_index(drop=True)
         result.to_csv('{}\\out\\restore_index.csv'.format(self.CURRENT_FOLDER))  # index reset without adding a new column 'index'
         pd.testing.assert_frame_equal(data, result)
+        pd.testing.assert_index_equal(data.index, result.index)
         
 
 if __name__ == '__main__':

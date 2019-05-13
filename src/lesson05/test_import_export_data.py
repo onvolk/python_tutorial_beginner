@@ -27,5 +27,6 @@ class TestPandasImportExportData(unittest.TestCase):
         data.to_excel('{}\\out\customers.xlsx'.format(self.CURRENT_FOLDER))
         data.to_excel('{}\\out\customers_no_index.xlsx'.format(self.CURRENT_FOLDER), index=False)
 
+
 if __name__ == '__main__':
     unittest.main()

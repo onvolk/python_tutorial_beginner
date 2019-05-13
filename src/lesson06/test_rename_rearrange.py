@@ -23,11 +23,12 @@ class TestPandasColumnRenameRearrange(unittest.TestCase):
         cols = cols[::-1]  # reverse the list
         result = data[cols]
         result.to_csv('{}\\out\\rearrange_columns.csv'.format(self.CURRENT_FOLDER))
+
+        # TODO: Move to the separate test
         self.assertListEqual(cols, result.columns.tolist())
         result_new = data.loc[:, cols]
         result_new.to_csv('{}\\out\\rearrange_columns_new.csv'.format(self.CURRENT_FOLDER))
         self.assertListEqual(cols, result_new.columns.tolist())
-
 
 
 if __name__ == '__main__':
