@@ -58,26 +58,20 @@ class TestNumpyArrayTransformation(unittest.TestCase):
         np.testing.assert_array_equal(result, [[8, -1, 0.2, 0.9],
                                                [4., 9, -0.02, 0.04]])
 
-    # TODO: remove hstack() call, declare h directly
     def test_array_horizontal_split(self):
-        a = np.array([[8, -1],
-                      [4, 9]])
-        b = np.array([[0.2, 0.9],
-                      [-0.02, 0.04]])
-        h = np.hstack((a, b))  # horizontal stack, adds b rights to a
+        h = np.array([[8, -1, 0.2, 0.9],
+                      [4., 9, -0.02, 0.04]])
         # makes 2 arrays from 1 horizontally
         np.testing.assert_array_equal(np.hsplit(h, 2), [([[8, -1],
                                                             [4, 9]]),
                                                         ([[0.2, 0.9],
                                                         [-0.02, 0.04]])])
 
-    # TODO: remove vstack() call, declare h directly
     def test_array_vertical_split(self):
-        a = np.array([[8, -1],
-                      [4, 9]])
-        b = np.array([[0.2, 0.9],
+        v = np.array([[8, -1],
+                      [4., 9],
+                      [0.2, 0.9],
                       [-0.02, 0.04]])
-        v = np.vstack((a, b))  # vertical stack, adds b below a
         # makes 2 arrays from 1 vertically
         np.testing.assert_array_equal(np.vsplit(v, 2), [([[8, -1],
                                                           [4, 9]]),
