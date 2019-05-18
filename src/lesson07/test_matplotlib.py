@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+import matplotlib.pyplot as plt
 import pandas as pd
 import unittest
 import os
@@ -9,6 +9,9 @@ import os
 class TestPlot(unittest.TestCase):
 
     CURRENT_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
+    def setUp(self):
+        plt.style.use('ggplot')
 
     def test_plot(self):
         data = [['tom', 10], ['nick', 15], ['juli', 14]]

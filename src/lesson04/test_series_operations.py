@@ -19,12 +19,9 @@ class TestPandasSeriesOperations(unittest.TestCase):
         self.assertListEqual(srs[[3, 0, 4]].index.tolist(), [3, 0, 4])
         self.assertEqual(srs[[3, 0, 4]].size, 3)
 
-    # TODO: Fix me!
     def test_series_operations(self):
-        arr = np.random.randn(5)
-        srs = pd.Series(arr)
-        result = srs ** 2
-        self.assertEqual(result.size, srs.size)
+        srs = pd.Series([1, 2, 3])
+        pd.testing.assert_series_equal(srs ** 2, pd.Series([1, 4, 9]))
 
 
 if __name__ == '__main__':
