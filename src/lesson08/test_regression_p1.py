@@ -22,6 +22,7 @@ class TestLinearRegressionPart1(unittest.TestCase):
         X.to_excel('{}\out\X.xlsx'.format(self.CURRENT_FOLDER))
         est = sm.OLS(Y, X) # makes the function - OlS model
         est = est.fit()
+        # https://stackoverflow.com/a/53373860
         est.summary()
         est.predict()
 

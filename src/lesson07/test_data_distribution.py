@@ -27,7 +27,6 @@ class TestDataDistributionPlot(unittest.TestCase):
         box.savefig('{}\out\\box_plot.png'.format(self.CURRENT_FOLDER))
 
 
-
 if __name__ == '__main__':
     unittest.main()
 
